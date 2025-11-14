@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 interface CalendarProps {
   initialDate?: Date;
@@ -67,7 +67,7 @@ export default function Calendar({
           ‹
         </button>
 
-        <div className="font-semibold text-lg">
+        <div className="font-semibold text-md">
           {currentDate.toLocaleString("default", { month: "long" })} {year}
         </div>
 
@@ -89,14 +89,14 @@ export default function Calendar({
       </div>
 
       {/* Days Row */}
-      <div className="grid grid-cols-7 text-center font-semibold text-gray-400 mb-2">
+      <div className="grid grid-cols-7 text-sm text-center font-semibold text-gray-400 mb-2">
         {days.map((d) => (
           <div key={d}>{d}</div>
         ))}
       </div>
 
       {/* Dates */}
-      <div className="grid grid-cols-7 text-center gap-1">
+      <div className="grid text-md grid-cols-7 text-center gap-1">
         {/* Empty slots before month start */}
         {Array.from({ length: firstDay }).map((_, i) => (
           <div key={"empty" + i}></div>
@@ -114,7 +114,7 @@ export default function Calendar({
             <button
               key={day}
               onClick={() => selectDate(day)}
-              className={`py-2 rounded-full hover:bg-gray-700 transition 
+              className={`py-2 text-sm rounded-full hover:bg-gray-700 transition 
                 ${isSelected ? "bg-blue-500 text-white font-bold" : ""}`}
             >
               {day}
