@@ -47,7 +47,7 @@ export default function Calendar({
       style={{
         fontFamily: "Poppins",
       }}
-      className="w-80 h-[350px] p-4 bg-gray-900 text-white rounded-xl shadow-lg"
+      className="w-80 p-4 bg-gray-900 text-white rounded-xl shadow-lg"
     >
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
