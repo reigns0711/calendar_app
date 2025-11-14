@@ -34,8 +34,21 @@ export default function Calendar({
     onDateSelect?.(newDate);
   };
 
+  React.useEffect(() => {
+    const link = document.createElement("link");
+    link.href =
+      "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+  }, []);
+
   return (
-    <div className="w-80 h-[355px] p-4 bg-gray-900 text-white rounded-xl shadow-lg">
+    <div
+      style={{
+        fontFamily: "Poppins",
+      }}
+      className="w-80 h-[350px] p-4 bg-gray-900 text-white rounded-xl shadow-lg"
+    >
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <button
